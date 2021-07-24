@@ -8,7 +8,7 @@ class Person {
     #_age ;
     #_gander ;
 
-    constructor () {
+    constructor ( name , age , gander ) {
 
         Object.defineProperties ( this , {
             'name' : {
@@ -41,16 +41,21 @@ class Person {
             }
         } ) ;
 
+        this.name = name ;
+        this.age = age ;
+        this.gander = gander ;
+
     }
 
 }
 
-const newPerson = new Person () ; 
-
-newPerson.name = ' bob' ;
-newPerson.gander = ' Male' ;
-newPerson.age = 120 ;
-console.dir ( newPerson ) ;
+const newPerson = new Person ( ' bob' , 120 , ' Male' ) ; 
+console.log ( newPerson.name ) ;
+console.log ( newPerson.age ) ;
+newPerson.name = 'ivan' ;
+newPerson.age = 121 ;
+console.dir ( newPerson.name ) ;
+console.log ( newPerson.male ) ;
 
 /* Object.defineProperty ( newPerson , 'age' , { //нельзя изменить поле объекта age
     configurable : true ,
